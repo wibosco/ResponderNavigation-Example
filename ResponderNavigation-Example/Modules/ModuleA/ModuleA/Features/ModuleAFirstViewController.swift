@@ -9,9 +9,17 @@ import UIKit
 import AppNavigation
 
 public class ModuleAFirstViewController: UIViewController {
-
     @IBOutlet weak var intermoduleButton: UIButton!
     @IBOutlet weak var intramoduleButton: UIButton!
+    
+    // MARK: - Instantiate
+    
+    static func instantiateFromStoryboard() -> UIViewController {
+        let bundle = Bundle(for: ModuleAFirstViewController.self)
+        let viewController = ModuleAFirstViewController.instantiateFromStoryboard("ModuleA", bundle: bundle, identifier: "FirstViewController")
+        
+        return viewController
+    }
     
     // MARK: - ViewLifecycle
     
@@ -29,11 +37,11 @@ public class ModuleAFirstViewController: UIViewController {
     
     @IBAction func intermoduleButtonPressed(_ sender: Any) {
         let navigationResponder: AppNavigation? = self.findConformingResponder()
-        navigationResponder?.navigateToModuleB()
+        navigationResponder?.navigate(to: .moduleB(screen: .first))
     }
     
     @IBAction func intramoduleButtonPressed(_ sender: Any) {
-        let navigationResponder: ModuleANavigation? = self.findConformingResponder()
-        navigationResponder?.navigateToSecond()
+        let navigationResponder: AppNavigation? = self.findConformingResponder()
+        navigationResponder?.navigate(to: .moduleA(screen: .second))
     }
 }

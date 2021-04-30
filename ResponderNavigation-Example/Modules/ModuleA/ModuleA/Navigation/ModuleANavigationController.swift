@@ -6,17 +6,15 @@
 //
 
 import UIKit
-
-public protocol ModuleANavigation {
-    func navigateToSecond()
-}
+import AppNavigation
 
 public class ModuleANavigationController: UINavigationController {
+    public func showFirst() {
+        let viewController = ModuleAFirstViewController.instantiateFromStoryboard()
+        pushViewController(viewController, animated: true)
+    }
     
-}
-
-extension ModuleANavigationController: ModuleANavigation {
-    public func navigateToSecond() {
+    public func showSecond() {
         let viewController = ModuleASecondViewController.instantiateFromStoryboard()
         pushViewController(viewController, animated: true)
     }

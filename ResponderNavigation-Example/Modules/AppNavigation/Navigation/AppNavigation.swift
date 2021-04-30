@@ -7,7 +7,21 @@
 
 import Foundation
 
+public enum NavigationRoute {
+    case moduleA(screen: ModuleAScreen)
+    case moduleB(screen: ModuleBScreen)
+}
+
+public enum ModuleAScreen {
+    case first
+    case second
+}
+
+public enum ModuleBScreen {
+    case first
+    case second
+}
+
 public protocol AppNavigation {
-    func navigateToModuleA()
-    func navigateToModuleB()
+    func navigate(to route: NavigationRoute)
 }
