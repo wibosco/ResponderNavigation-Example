@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HaM-ky-BuC">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--ModuleA Navigation Controller-->
+        <scene sceneID="h3V-rQ-j8Y">
+            <objects>
+                <navigationController id="HaM-ky-BuC" customClass="ModuleANavigationController" customModule="ModuleA" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5Oz-1j-vQl">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="fVm-lK-TWN" kind="relationship" relationship="rootViewController" id="E4n-rf-aGW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qw6-VG-UHz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-922" y="151"/>
+        </scene>
+        <!--ModuleA First View Controller-->
+        <scene sceneID="mZc-uo-OGi">
+            <objects>
+                <viewController id="fVm-lK-TWN" customClass="ModuleAFirstViewController" customModule="ModuleA" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FWx-Sg-aXg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="79" translatesAutoresizingMaskIntoConstraints="NO" id="tJP-hV-EMZ">
+                                <rect key="frame" x="20" y="403" width="374" height="90"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V37-qS-nYj">
+                                        <rect key="frame" x="0.0" y="0.0" width="147.5" height="90"/>
+                                        <state key="normal" title="Inter-module"/>
+                                        <connections>
+                                            <action selector="intermoduleButtonPressed:" destination="fVm-lK-TWN" eventType="touchUpInside" id="IMh-WZ-pwG"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kVB-lk-9iq">
+                                        <rect key="frame" x="226.5" y="0.0" width="147.5" height="90"/>
+                                        <state key="normal" title="Intra-module"/>
+                                        <connections>
+                                            <action selector="intramoduleButtonPressed:" destination="fVm-lK-TWN" eventType="touchUpInside" id="Ra7-jw-mIz"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="IUe-ob-NJD"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CIw-Mb-tpp">
+                                <rect key="frame" x="191.5" y="148" width="31" height="57.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0Se-b2-hIn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CIw-Mb-tpp" firstAttribute="top" secondItem="0Se-b2-hIn" secondAttribute="top" constant="60" id="Pgx-cn-aZI"/>
+                            <constraint firstItem="0Se-b2-hIn" firstAttribute="trailing" secondItem="tJP-hV-EMZ" secondAttribute="trailing" constant="20" id="VdB-nx-gWt"/>
+                            <constraint firstItem="CIw-Mb-tpp" firstAttribute="centerX" secondItem="FWx-Sg-aXg" secondAttribute="centerX" id="c3J-hN-wgV"/>
+                            <constraint firstItem="tJP-hV-EMZ" firstAttribute="centerY" secondItem="FWx-Sg-aXg" secondAttribute="centerY" id="mMZ-fT-a4g"/>
+                            <constraint firstItem="tJP-hV-EMZ" firstAttribute="leading" secondItem="0Se-b2-hIn" secondAttribute="leading" constant="20" id="z9k-G9-AyX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="QHH-Dx-gOq"/>
+                    <connections>
+                        <outlet property="intermoduleButton" destination="V37-qS-nYj" id="KTy-DB-g9g"/>
+                        <outlet property="intramoduleButton" destination="kVB-lk-9iq" id="aOK-Bg-FvI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="icL-6E-RNb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-242" y="151"/>
+        </scene>
+        <!--ModuleA Second View Controller-->
+        <scene sceneID="i58-90-I0P">
+            <objects>
+                <viewController storyboardIdentifier="SecondViewController" id="TVA-hW-Arb" customClass="ModuleASecondViewController" customModule="ModuleA" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UAG-vo-4HV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="3s3-Hl-Klm"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IxN-Wo-4sl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="487" y="167"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
