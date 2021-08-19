@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import Navigation
+@testable import AppNavigation
 
 class NavigationTests: XCTestCase {
 
